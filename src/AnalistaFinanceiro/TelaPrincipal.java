@@ -113,7 +113,7 @@ public class TelaPrincipal extends JFrame {
 
         try {
             ImageIcon icone = new ImageIcon(TelaPrincipal.class.getResource("/imagens/logo.png"));
-            Image imagem = icone.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+            Image imagem = icone.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
             painelTitulo.add(new JLabel(new ImageIcon(imagem)));
         } catch (Exception e) {
             System.out.println("Erro ao carregar imagem: /imagens/logo.png");

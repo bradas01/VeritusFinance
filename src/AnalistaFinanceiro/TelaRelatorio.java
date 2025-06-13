@@ -47,9 +47,6 @@ public class TelaRelatorio extends JFrame {
                 .collect(Collectors.joining(""));
 
         String bannerHtml = "";
-        try {
-            bannerHtml = "<div style='text-align:center; margin-bottom: 20px;'><img src='" + getClass().getResource("/imagens/relatorio_banner.png") + "'></div>";
-        } catch(Exception e) {}
 
         editorPane.setText(
                 "<html>" +
