@@ -2,6 +2,7 @@ package AnalistaFinanceiro;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 
 public class TelaGerenciarCategorias extends JFrame {
@@ -16,29 +17,48 @@ public class TelaGerenciarCategorias extends JFrame {
         this.setSize(500, 450);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
+        this.getContentPane().setBackground(new Color(30, 30, 30));
 
         this.add(TelaPrincipal.createHeaderPanel("Categorias"), BorderLayout.NORTH);
 
         modeloTabela = new DefaultTableModel(new String[]{"Nome da Categoria"}, 0) {
-            @Override public boolean isCellEditable(int row, int column) { return false; }
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
         };
         tabelaCategorias = new JTable(modeloTabela);
-        this.add(new JScrollPane(tabelaCategorias), BorderLayout.CENTER);
+        tabelaCategorias.setBackground(new Color(30, 30, 30));
+        tabelaCategorias.setForeground(Color.WHITE);
+        tabelaCategorias.setGridColor(Color.DARK_GRAY);
+        tabelaCategorias.setRowHeight(25);
+        tabelaCategorias.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+
+        JTableHeader header = tabelaCategorias.getTableHeader();
+        header.setBackground(new Color(45, 45, 45));
+        header.setForeground(Color.WHITE);
+        header.setFont(new Font("Segoe UI", Font.BOLD, 14));
+
+        JScrollPane scrollPane = new JScrollPane(tabelaCategorias);
+        scrollPane.getViewport().setBackground(new Color(30, 30, 30));
+        this.add(scrollPane, BorderLayout.CENTER);
+
         carregarDadosNaTabela();
 
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        painelBotoes.setBackground(new Color(30, 30, 30));
         JButton btnAdicionar = new JButton("Adicionar");
         JButton btnExcluir = new JButton("Excluir");
         painelBotoes.add(btnAdicionar);
         painelBotoes.add(btnExcluir);
 
         JPanel painelSul = new JPanel(new BorderLayout());
+        painelSul.setBackground(new Color(30, 30, 30));
         painelSul.add(painelBotoes, BorderLayout.NORTH);
-        try {
-            painelSul.add(new JLabel(new ImageIcon(getClass().getResource("/imagens/categorias_banner.png"))), BorderLayout.CENTER);
-        } catch (Exception e) {}
-        this.add(painelSul, BorderLayout.SOUTH);
+        if (TelaPrincipal.listaDeCategorias.isEmpty()) {
 
+        }
+        this.add(painelSul, BorderLayout.SOUTH);
 
         btnAdicionar.addActionListener(e -> {
             String nome = JOptionPane.showInputDialog(this, "Nome da nova categoria:", "Adicionar", JOptionPane.PLAIN_MESSAGE);

@@ -34,10 +34,10 @@ public class TelaRelatorio extends JFrame {
         String despesasHtml = TelaPrincipal.listaDeDespesas.stream()
                 .map(d -> String.format(
                         "<tr>" +
-                                "<td style='padding: 4px; border-bottom: 1px solid #ddd;'>%s</td>" +
-                                "<td style='padding: 4px; border-bottom: 1px solid #ddd;'>%s</td>" +
-                                "<td style='padding: 4px; border-bottom: 1px solid #ddd;'>%s</td>" +
-                                "<td style='padding: 4px; border-bottom: 1px solid #ddd; text-align: right;'>R$ %.2f</td>" +
+                                "<td style='padding: 4px; border-bottom: 1px solid #444;'>%s</td>" +
+                                "<td style='padding: 4px; border-bottom: 1px solid #444;'>%s</td>" +
+                                "<td style='padding: 4px; border-bottom: 1px solid #444;'>%s</td>" +
+                                "<td style='padding: 4px; border-bottom: 1px solid #444; text-align: right;'>R$ %.2f</td>" +
                                 "</tr>",
                         new SimpleDateFormat("dd/MM/yyyy").format(d.getData()),
                         d.getCategoria().getNome(),
@@ -50,17 +50,17 @@ public class TelaRelatorio extends JFrame {
 
         editorPane.setText(
                 "<html>" +
-                        "<body style='font-family: Arial, sans-serif; margin: 20px;'>" +
+                        "<body style='font-family: Arial, sans-serif; margin: 20px; background-color: #1e1e1e; color: #e0e0e0;'>" +
                         bannerHtml +
-                        "<div style='background-color: #f0f8ff; padding: 15px; border-radius: 8px;'>" +
-                        "<h2 style='color: #005a9e;'>Resumo Geral</h2>" +
+                        "<div style='background-color: #2d2d30; padding: 15px; border-radius: 8px;'>" +
+                        "<h2 style='color: #4fc3f7;'>Resumo Geral</h2>" +
                         "<p><b>Total de Despesas:</b> " + TelaPrincipal.listaDeDespesas.size() + " registros</p>" +
-                        "<p><b>Valor Total Gasto:</b> <span style='color: red; font-weight: bold;'>R$ " + String.format("%.2f", total) + "</span></p>" +
+                        "<p><b>Valor Total Gasto:</b> <span style='color: #ef5350; font-weight: bold;'>R$ " + String.format("%.2f", total) + "</span></p>" +
                         "<p><b>Média de Gasto por Despesa:</b> R$ " + String.format("%.2f", media) + "</p>" +
                         "</div>" +
-                        "<h2 style='color: #005a9e; margin-top: 30px;'>Lista de Despesas</h2>" +
+                        "<h2 style='color: #4fc3f7; margin-top: 30px;'>Lista de Despesas</h2>" +
                         "<table style='width: 100%; border-collapse: collapse;'>" +
-                        "<tr style='background-color: #005a9e; color: white;'>" +
+                        "<tr style='background-color: #333; color: #ffffff;'>" +
                         "<th style='padding: 8px; text-align: left;'>Data</th>" +
                         "<th style='padding: 8px; text-align: left;'>Categoria</th>" +
                         "<th style='padding: 8px; text-align: left;'>Descrição</th>" +
@@ -75,6 +75,7 @@ public class TelaRelatorio extends JFrame {
         this.add(new JScrollPane(editorPane), BorderLayout.CENTER);
 
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        painelBotoes.setBackground(new Color(30, 30, 30));
         JButton btnExportarCSV = new JButton("Gerar CSV");
         JButton btnImprimir = new JButton("Imprimir Relatório");
         painelBotoes.add(btnExportarCSV);

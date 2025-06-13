@@ -3,7 +3,6 @@ package AnalistaFinanceiro;
 import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class TelaEditarDespesa extends JFrame {
 
@@ -20,38 +19,86 @@ public class TelaEditarDespesa extends JFrame {
         this.setSize(500, 450);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout(10, 10));
+        this.getContentPane().setBackground(new Color(30, 30, 30));
 
         this.add(TelaPrincipal.createHeaderPanel("Editar Despesa"), BorderLayout.NORTH);
 
         JPanel painelFormulario = new JPanel(new GridBagLayout());
+        painelFormulario.setBackground(new Color(30, 30, 30));
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5,5,5,5);
+        gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
 
-        try {
-            ImageIcon icone = new ImageIcon(getClass().getResource("/imagens/edit_despesa_banner.png"));
-            gbc.gridy = 0; gbc.gridx = 0; gbc.gridwidth = 2; gbc.anchor = GridBagConstraints.CENTER; gbc.insets = new Insets(5,5,15,5);
-            painelFormulario.add(new JLabel(icone), gbc);
-            gbc.gridwidth = 1; gbc.anchor = GridBagConstraints.WEST; gbc.insets = new Insets(5,5,5,5);
-        } catch (Exception e) {}
+        JLabel lblDescricao = new JLabel("Descrição:");
+        lblDescricao.setForeground(Color.WHITE);
+        gbc.gridy = 1;
+        gbc.gridx = 0;
+        painelFormulario.add(lblDescricao, gbc);
 
-        gbc.gridy = 1; gbc.gridx = 0; painelFormulario.add(new JLabel("Descrição:"), gbc);
-        gbc.gridy = 1; gbc.gridx = 1; txtDescricao = new JTextField(despesa.getDescricao(), 20); painelFormulario.add(txtDescricao, gbc);
+        txtDescricao = new JTextField(despesa.getDescricao(), 20);
+        txtDescricao.setBackground(new Color(60, 63, 65));
+        txtDescricao.setForeground(Color.WHITE);
+        txtDescricao.setCaretColor(Color.WHITE);
+        gbc.gridy = 1;
+        gbc.gridx = 1;
+        painelFormulario.add(txtDescricao, gbc);
 
-        gbc.gridy = 2; gbc.gridx = 0; painelFormulario.add(new JLabel("Valor (R$):"), gbc);
-        gbc.gridy = 2; gbc.gridx = 1; txtValor = new JTextField(String.valueOf(despesa.getValor()), 20); painelFormulario.add(txtValor, gbc);
+        JLabel lblValor = new JLabel("Valor (R$):");
+        lblValor.setForeground(Color.WHITE);
+        gbc.gridy = 2;
+        gbc.gridx = 0;
+        painelFormulario.add(lblValor, gbc);
 
-        gbc.gridy = 3; gbc.gridx = 0; painelFormulario.add(new JLabel("Data (dd/MM/yyyy):"), gbc);
-        gbc.gridy = 3; gbc.gridx = 1; txtData = new JTextField(new SimpleDateFormat("dd/MM/yyyy").format(despesa.getData()), 20); painelFormulario.add(txtData, gbc);
+        txtValor = new JTextField(String.valueOf(despesa.getValor()), 20);
+        txtValor.setBackground(new Color(60, 63, 65));
+        txtValor.setForeground(Color.WHITE);
+        txtValor.setCaretColor(Color.WHITE);
+        gbc.gridy = 2;
+        gbc.gridx = 1;
+        painelFormulario.add(txtValor, gbc);
 
-        gbc.gridy = 4; gbc.gridx = 0; painelFormulario.add(new JLabel("Categoria:"), gbc);
-        gbc.gridy = 4; gbc.gridx = 1; comboCategorias = new JComboBox<>(); TelaPrincipal.listaDeCategorias.forEach(comboCategorias::addItem); comboCategorias.setSelectedItem(despesa.getCategoria()); painelFormulario.add(comboCategorias, gbc);
+        JLabel lblData = new JLabel("Data (dd/MM/yyyy):");
+        lblData.setForeground(Color.WHITE);
+        gbc.gridy = 3;
+        gbc.gridx = 0;
+        painelFormulario.add(lblData, gbc);
+
+        txtData = new JTextField(new SimpleDateFormat("dd/MM/yyyy").format(despesa.getData()), 20);
+        txtData.setBackground(new Color(60, 63, 65));
+        txtData.setForeground(Color.WHITE);
+        txtData.setCaretColor(Color.WHITE);
+        gbc.gridy = 3;
+        gbc.gridx = 1;
+        painelFormulario.add(txtData, gbc);
+
+        JLabel lblCategoria = new JLabel("Categoria:");
+        lblCategoria.setForeground(Color.WHITE);
+        gbc.gridy = 4;
+        gbc.gridx = 0;
+        painelFormulario.add(lblCategoria, gbc);
+
+        comboCategorias = new JComboBox<>();
+        comboCategorias.setBackground(new Color(60, 63, 65));
+        comboCategorias.setForeground(Color.WHITE);
+        TelaPrincipal.listaDeCategorias.forEach(comboCategorias::addItem);
+        comboCategorias.setSelectedItem(despesa.getCategoria());
+        gbc.gridy = 4;
+        gbc.gridx = 1;
+        painelFormulario.add(comboCategorias, gbc);
 
         this.add(painelFormulario, BorderLayout.CENTER);
 
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        painelBotoes.setBackground(new Color(30, 30, 30));
+
         JButton btnSalvar = new JButton("Salvar");
+        btnSalvar.setBackground(new Color(60, 63, 65));
+        btnSalvar.setForeground(Color.WHITE);
+
         JButton btnCancelar = new JButton("Cancelar");
+        btnCancelar.setBackground(new Color(60, 63, 65));
+        btnCancelar.setForeground(Color.WHITE);
+
         painelBotoes.add(btnSalvar);
         painelBotoes.add(btnCancelar);
         this.add(painelBotoes, BorderLayout.SOUTH);

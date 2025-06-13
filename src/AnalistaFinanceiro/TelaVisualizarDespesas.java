@@ -28,16 +28,24 @@ public class TelaVisualizarDespesas extends JFrame {
         tabelaDespesas = new JTable(modeloTabela);
         tabelaDespesas.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         tabelaDespesas.setRowHeight(25);
+        tabelaDespesas.setBackground(new Color(30, 30, 30));
+        tabelaDespesas.setForeground(Color.WHITE);
+        tabelaDespesas.setGridColor(Color.DARK_GRAY);
+
         JTableHeader header = tabelaDespesas.getTableHeader();
         header.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        header.setBackground(new Color(45, 45, 45));
+        header.setForeground(Color.WHITE);
 
         JScrollPane scrollPane = new JScrollPane(tabelaDespesas);
+        scrollPane.getViewport().setBackground(new Color(30, 30, 30));
         scrollPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         this.add(scrollPane, BorderLayout.CENTER);
 
         carregarDadosNaTabela();
 
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        painelBotoes.setBackground(new Color(30, 30, 30));
         JButton btnEditar = new JButton("Editar");
         JButton btnExcluir = new JButton("Excluir");
         JButton btnAtualizar = new JButton("Atualizar");
@@ -46,10 +54,8 @@ public class TelaVisualizarDespesas extends JFrame {
         painelBotoes.add(btnAtualizar);
 
         JPanel painelSul = new JPanel(new BorderLayout());
+        painelSul.setBackground(new Color(30, 30, 30));
         painelSul.add(painelBotoes, BorderLayout.NORTH);
-        try {
-            painelSul.add(new JLabel(new ImageIcon(getClass().getResource("/imagens/view_despesas_banner.png"))), BorderLayout.CENTER);
-        } catch (Exception e) {}
         this.add(painelSul, BorderLayout.SOUTH);
 
         btnExcluir.addActionListener(e -> excluirDespesa());

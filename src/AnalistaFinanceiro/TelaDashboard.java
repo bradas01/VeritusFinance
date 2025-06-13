@@ -21,25 +21,26 @@ public class TelaDashboard extends JFrame {
         this.setSize(600, 500);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
-        this.getContentPane().setBackground(new Color(245, 245, 245));
+        this.getContentPane().setBackground(new Color(30, 30, 30));  // Fundo escuro
 
         this.add(TelaPrincipal.createHeaderPanel("Dashboard"), BorderLayout.NORTH);
 
         JPanel painelConteudo = new JPanel(new GridLayout(4, 1, 10, 10));
         painelConteudo.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        painelConteudo.setOpaque(false);
+        painelConteudo.setBackground(new Color(30, 30, 30));  // Fundo painel escuro
 
         double totalGasto = TelaPrincipal.listaDeDespesas.stream().mapToDouble(Despesa::getValor).sum();
         int totalDespesas = TelaPrincipal.listaDeDespesas.size();
         String categoriaCara = calcularCategoriaMaisCara();
 
         try {
-            painelConteudo.add(new JLabel(new ImageIcon(getClass().getResource("/imagens/dashboard_banner.png"))));
+            JLabel banner = new JLabel(new ImageIcon(getClass().getResource("/imagens/dashboard_banner.png")));
+            painelConteudo.add(banner);
         } catch (Exception e) {}
 
-        painelConteudo.add(criarLabel(String.format("Total Gasto: R$ %.2f", totalGasto), Font.PLAIN, 22, Color.BLACK));
-        painelConteudo.add(criarLabel("Despesas Registradas: " + totalDespesas, Font.PLAIN, 22, Color.BLACK));
-        painelConteudo.add(criarLabel("Categoria com Maior Gasto: " + categoriaCara, Font.PLAIN, 22, Color.BLACK));
+        painelConteudo.add(criarLabel(String.format("Total Gasto: R$ %.2f", totalGasto), Font.PLAIN, 22, Color.WHITE));
+        painelConteudo.add(criarLabel("Despesas Registradas: " + totalDespesas, Font.PLAIN, 22, Color.WHITE));
+        painelConteudo.add(criarLabel("Categoria com Maior Gasto: " + categoriaCara, Font.PLAIN, 22, Color.WHITE));
 
         this.add(painelConteudo, BorderLayout.CENTER);
     }

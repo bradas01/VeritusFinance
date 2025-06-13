@@ -12,6 +12,7 @@ public class TelaAjuda extends JFrame {
         this.setSize(550, 450);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
+        this.getContentPane().setBackground(new Color(30, 30, 30)); // fundo escuro
 
         this.add(TelaPrincipal.createHeaderPanel("Ajuda"), BorderLayout.NORTH);
 
@@ -22,6 +23,7 @@ public class TelaAjuda extends JFrame {
         areaTexto.setOpaque(false);
         areaTexto.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         areaTexto.setMargin(new Insets(15, 15, 15, 15));
+        areaTexto.setForeground(Color.WHITE);  // texto claro para contraste
         areaTexto.setText(
                 "1. Gerenciar Categorias: Antes de tudo, crie as categorias de seus gastos (Ex: 'Comida', 'Transporte').\n\n" +
                         "2. Adicionar Despesa: Vá em 'Adicionar Nova Despesa', preencha os detalhes e selecione a categoria correspondente.\n\n" +
@@ -31,10 +33,8 @@ public class TelaAjuda extends JFrame {
         );
 
         JPanel painelCentral = new JPanel(new BorderLayout());
+        painelCentral.setBackground(new Color(30, 30, 30));
         painelCentral.add(new JScrollPane(areaTexto), BorderLayout.CENTER);
-        try {
-            painelCentral.add(new JLabel(new ImageIcon(getClass().getResource("/imagens/help_banner.png"))), BorderLayout.SOUTH);
-        } catch (Exception e) {}
         this.add(painelCentral, BorderLayout.CENTER);
     }
 }

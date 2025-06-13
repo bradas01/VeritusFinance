@@ -17,36 +17,56 @@ public class TelaAdicionarDespesa extends JFrame {
         this.setSize(500, 450);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout(10, 10));
+        this.getContentPane().setBackground(new Color(30, 30, 30));
 
         this.add(TelaPrincipal.createHeaderPanel("Nova Despesa"), BorderLayout.NORTH);
 
         JPanel painelFormulario = new JPanel(new GridBagLayout());
+        painelFormulario.setBackground(new Color(30, 30, 30));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5,5,5,5);
         gbc.anchor = GridBagConstraints.WEST;
 
-        try {
-            ImageIcon icone = new ImageIcon(getClass().getResource("/imagens/add_despesa_banner.png"));
-            gbc.gridy = 0; gbc.gridx = 0; gbc.gridwidth = 2; gbc.anchor = GridBagConstraints.CENTER; gbc.insets = new Insets(5,5,15,5);
-            painelFormulario.add(new JLabel(icone), gbc);
-            gbc.gridwidth = 1; gbc.anchor = GridBagConstraints.WEST; gbc.insets = new Insets(5,5,5,5);
-        } catch (Exception e) {}
+        JLabel lblDescricao = new JLabel("Descrição:");
+        lblDescricao.setForeground(Color.WHITE);
+        gbc.gridy = 1; gbc.gridx = 0; painelFormulario.add(lblDescricao, gbc);
+        txtDescricao = new JTextField(20);
+        txtDescricao.setBackground(new Color(45, 45, 45));
+        txtDescricao.setForeground(Color.WHITE);
+        txtDescricao.setCaretColor(Color.WHITE);
+        gbc.gridy = 1; gbc.gridx = 1; painelFormulario.add(txtDescricao, gbc);
 
-        gbc.gridy = 1; gbc.gridx = 0; painelFormulario.add(new JLabel("Descrição:"), gbc);
-        gbc.gridy = 1; gbc.gridx = 1; txtDescricao = new JTextField(20); painelFormulario.add(txtDescricao, gbc);
+        JLabel lblValor = new JLabel("Valor (R$):");
+        lblValor.setForeground(Color.WHITE);
+        gbc.gridy = 2; gbc.gridx = 0; painelFormulario.add(lblValor, gbc);
+        txtValor = new JTextField(20);
+        txtValor.setBackground(new Color(45, 45, 45));
+        txtValor.setForeground(Color.WHITE);
+        txtValor.setCaretColor(Color.WHITE);
+        gbc.gridy = 2; gbc.gridx = 1; painelFormulario.add(txtValor, gbc);
 
-        gbc.gridy = 2; gbc.gridx = 0; painelFormulario.add(new JLabel("Valor (R$):"), gbc);
-        gbc.gridy = 2; gbc.gridx = 1; txtValor = new JTextField(20); painelFormulario.add(txtValor, gbc);
+        JLabel lblData = new JLabel("Data (dd/MM/yyyy):");
+        lblData.setForeground(Color.WHITE);
+        gbc.gridy = 3; gbc.gridx = 0; painelFormulario.add(lblData, gbc);
+        txtData = new JTextField(new SimpleDateFormat("dd/MM/yyyy").format(new Date()), 20);
+        txtData.setBackground(new Color(45, 45, 45));
+        txtData.setForeground(Color.WHITE);
+        txtData.setCaretColor(Color.WHITE);
+        gbc.gridy = 3; gbc.gridx = 1; painelFormulario.add(txtData, gbc);
 
-        gbc.gridy = 3; gbc.gridx = 0; painelFormulario.add(new JLabel("Data (dd/MM/yyyy):"), gbc);
-        gbc.gridy = 3; gbc.gridx = 1; txtData = new JTextField(new SimpleDateFormat("dd/MM/yyyy").format(new Date()), 20); painelFormulario.add(txtData, gbc);
-
-        gbc.gridy = 4; gbc.gridx = 0; painelFormulario.add(new JLabel("Categoria:"), gbc);
-        gbc.gridy = 4; gbc.gridx = 1; comboCategorias = new JComboBox<>(); TelaPrincipal.listaDeCategorias.forEach(comboCategorias::addItem); painelFormulario.add(comboCategorias, gbc);
+        JLabel lblCategoria = new JLabel("Categoria:");
+        lblCategoria.setForeground(Color.WHITE);
+        gbc.gridy = 4; gbc.gridx = 0; painelFormulario.add(lblCategoria, gbc);
+        comboCategorias = new JComboBox<>();
+        comboCategorias.setBackground(new Color(45, 45, 45));
+        comboCategorias.setForeground(Color.WHITE);
+        TelaPrincipal.listaDeCategorias.forEach(comboCategorias::addItem);
+        gbc.gridy = 4; gbc.gridx = 1; painelFormulario.add(comboCategorias, gbc);
 
         this.add(painelFormulario, BorderLayout.CENTER);
 
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        painelBotoes.setBackground(new Color(30, 30, 30));
         JButton btnSalvar = new JButton("Salvar");
         JButton btnCancelar = new JButton("Cancelar");
         painelBotoes.add(btnSalvar);

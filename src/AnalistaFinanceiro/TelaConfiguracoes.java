@@ -16,17 +16,14 @@ public class TelaConfiguracoes extends JFrame {
         this.setSize(500, 350);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
+        this.getContentPane().setBackground(new Color(30, 30, 30)); // fundo escuro
 
         this.add(TelaPrincipal.createHeaderPanel("Configurações"), BorderLayout.NORTH);
 
         JPanel painelConteudo = new JPanel(new GridBagLayout());
+        painelConteudo.setBackground(new Color(30, 30, 30)); // fundo escuro
         painelConteudo.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         GridBagConstraints gbc = new GridBagConstraints();
-
-        try {
-            gbc.gridy = 0; gbc.insets = new Insets(5,5,15,5);
-            painelConteudo.add(new JLabel(new ImageIcon(getClass().getResource("/imagens/config_banner.png"))), gbc);
-        } catch (Exception e) {}
 
         gbc.gridy = 1;
         checkNotificacoes = new JCheckBox("Ativar notificações de resumo diário");
@@ -34,16 +31,23 @@ public class TelaConfiguracoes extends JFrame {
         checkNotificacoes.setHorizontalAlignment(SwingConstants.CENTER);
         checkNotificacoes.setSelected(configs.isNotificacoesAtivadas());
 
+        checkNotificacoes.setBackground(new Color(30, 30, 30));
+        checkNotificacoes.setForeground(Color.WHITE);
+
         painelConteudo.add(checkNotificacoes, gbc);
 
         this.add(painelConteudo, BorderLayout.CENTER);
 
         JButton btnSalvar = new JButton("Salvar Configurações");
         btnSalvar.setFont(new Font("Arial", Font.BOLD, 14));
+        btnSalvar.setBackground(new Color(60, 63, 65));
+        btnSalvar.setForeground(Color.WHITE);
 
         JPanel painelBotao = new JPanel();
-        painelBotao.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        painelBotao.setBackground(new Color(30, 30, 30));
+        painelBotao.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         painelBotao.add(btnSalvar);
+
         this.add(painelBotao, BorderLayout.SOUTH);
 
         btnSalvar.addActionListener(e -> salvarConfiguracoes());
