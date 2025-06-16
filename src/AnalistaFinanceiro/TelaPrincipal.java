@@ -148,3 +148,4 @@ public class TelaPrincipal extends JFrame {
         SwingUtilities.invokeLater(() -> new TelaLogin().setVisible(true));
     }
 }
+
