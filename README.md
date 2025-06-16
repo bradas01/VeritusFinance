@@ -1,22 +1,24 @@
 # 💰 Analista Financeiro
 
-Aplicação Java desktop desenvolvida com **Java Swing** para gerenciamento de despesas pessoais. O sistema permite cadastrar categorias, adicionar despesas, definir metas mensais, visualizar dashboards e gerar relatórios em HTML estilizados.
+Aplicação Java desktop desenvolvida com **Java Swing** para gerenciamento de despesas pessoais. O sistema permite cadastrar categorias, adicionar despesas, definir metas mensais, visualizar dashboards e gerar relatórios com visual moderno em HTML.
 
-## 🖼️ Visão Geral
+---
 
-O **Analista Financeiro** oferece uma interface amigável para o controle financeiro pessoal com funcionalidades essenciais como:
+## 🖥️ Funcionalidades
 
-- Cadastro e edição de despesas
-- Gerenciamento de categorias
-- Visualização de despesas em tabelas HTML integradas
-- Dashboard com resumos e insights
-- Definição de metas mensais
-- Configurações e preferências
-- Tela de ajuda com orientações básicas
+* 📊 **Dashboard**: Resumo visual das finanças pessoais.
+* 📝 **Adicionar & Editar Despesas**: Campos para descrição, valor, data e categoria.
+* 📁 **Gerenciamento de Categorias**: Criação e seleção personalizadas.
+* 🗂️ **Visualização de Despesas em HTML**: Interface estilizada com tabela responsiva.
+* 🎯 **Definir Orçamento Mensal**: Estabeleça uma meta de gastos.
+* 🔔 **Configurações**: Ativação de notificações de resumo.
+* ❓ **Ajuda**: Guia introdutório para uso da aplicação.
 
-## 📦 Estrutura do Projeto
+---
 
-```bash
+## 📂 Estrutura do Projeto
+
+```
 src/
 └── AnalistaFinanceiro/
     ├── TelaPrincipal.java
@@ -30,53 +32,48 @@ src/
     ├── Categoria.java
     ├── Despesa.java
     └── Configuracoes.java
-✅ Funcionalidades
-📊 Dashboard: Visualização de totais, quantidade de despesas e categoria mais onerosa.
+```
 
-📝 Adição e edição de despesas com campos para descrição, valor, data e categoria.
+---
 
-📆 Visualização HTML das despesas com data formatada e estilo escuro.
+## 🔧 Tecnologias Utilizadas
 
-📁 Categorias: Totalmente gerenciáveis pelo usuário.
+* **Java SE 8+**
+* **Java Swing** (JFrame, JPanel, GridBagLayout, etc.)
+* **JEditorPane + HTML/CSS inline** para visualização
+* **Stream API & Collections** (List, forEach, map, collect)
+* **Padrão Singleton** (para Configurações)
 
-⚙️ Configurações: Habilitar/desabilitar notificações de resumo.
+---
 
-🧾 Ajuda: Guia para primeiros passos e uso da aplicação.
+## ▶️ Como Executar
 
-🧪 Tecnologias Utilizadas
-Java SE 8+
+1. Clone o repositório:
 
-Java Swing
+   ```bash
+   git clone https://github.com/seu-usuario/analista-financeiro.git
+   ```
 
-HTML para visualização de dados
+2. Importe o projeto em sua IDE favorita (ex: IntelliJ IDEA, Eclipse).
 
-Padrão de Projeto Singleton (para Configuracoes)
+3. Compile e execute a classe `TelaPrincipal.java`.
 
-Collections (List, Map, Stream API)
+---
 
-📸 Capturas de Tela
-(Você pode adicionar aqui imagens da interface, como dashboard, editor de despesas, etc.)
+## 🧠 Sugestões Futuras
 
-🚀 Como Executar
-Clone o repositório:
+* Exportação de relatórios em PDF
+* Persistência em banco de dados local (SQLite, H2)
+* Login de usuários com diferentes perfis
+* Alternância entre temas claro e escuro
+* Backup automático
 
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/analista-financeiro.git
-Importe o projeto em sua IDE (ex: IntelliJ IDEA ou Eclipse).
+---
 
-Compile e execute a classe TelaPrincipal.java.
+## 👤 Autor
 
-💡 Sugestões Futuras
-Exportação de relatórios em PDF
+**Enzo Bradaschia**
+> Projeto desenvolvido como ferramenta de apoio à organização financeira pessoal, com foco em clareza visual, simplicidade de uso e boa arquitetura de código.
 
-Armazenamento em arquivo local ou banco de dados
+---
 
-Sincronização com nuvem (ex: Google Drive)
-
-Dark/Light Theme toggle
-
-👨‍💻 Autor
-Enzo Bradaschia
-Desenvolvido como projeto de controle financeiro pessoal com foco em UX e boas práticas de interface.
