@@ -19,7 +19,6 @@ public class TelaPrincipal extends JFrame {
         this.setLayout(new BorderLayout());
         this.getContentPane().setBackground(new Color(44, 47, 51));
 
-        // Menu
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBackground(new Color(35, 39, 42));
         menuBar.setForeground(Color.WHITE);
@@ -42,7 +41,6 @@ public class TelaPrincipal extends JFrame {
         painelBotoes.setBorder(BorderFactory.createEmptyBorder(30, 50, 20, 50));
         painelBotoes.setOpaque(false);
 
-        // Botões sem ícones
         JButton btnAdicionarDespesa = createStyledButton("Adicionar Despesa");
         JButton btnVisualizarDespesas = createStyledButton("Visualizar Despesas");
         JButton btnGerenciarCategorias = createStyledButton("Gerenciar Categorias");
@@ -68,7 +66,6 @@ public class TelaPrincipal extends JFrame {
         painelImagemSul.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
         this.add(painelImagemSul, BorderLayout.SOUTH);
 
-        // Ações
         btnAdicionarDespesa.addActionListener(e -> new TelaAdicionarDespesa().setVisible(true));
         btnVisualizarDespesas.addActionListener(e -> new TelaVisualizarDespesas().setVisible(true));
         btnGerenciarCategorias.addActionListener(e -> new TelaGerenciarCategorias().setVisible(true));

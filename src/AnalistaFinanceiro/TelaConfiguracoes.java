@@ -16,12 +16,12 @@ public class TelaConfiguracoes extends JFrame {
         this.setSize(500, 350);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
-        this.getContentPane().setBackground(new Color(30, 30, 30)); // fundo escuro
+        this.getContentPane().setBackground(new Color(30, 30, 30));
 
         this.add(TelaPrincipal.createHeaderPanel("Configurações"), BorderLayout.NORTH);
 
         JPanel painelConteudo = new JPanel(new GridBagLayout());
-        painelConteudo.setBackground(new Color(30, 30, 30)); // fundo escuro
+        painelConteudo.setBackground(new Color(30, 30, 30));
         painelConteudo.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         GridBagConstraints gbc = new GridBagConstraints();
 
