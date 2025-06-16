@@ -1,4 +1,3 @@
-
 # 💰 Analista Financeiro
 
 Aplicação Java desktop desenvolvida com **Java Swing** para gerenciamento de despesas pessoais. O sistema permite cadastrar categorias, adicionar despesas, definir metas mensais, visualizar dashboards e gerar relatórios em HTML estilizados.
@@ -31,50 +30,53 @@ src/
     ├── Categoria.java
     ├── Despesa.java
     └── Configuracoes.java
+✅ Funcionalidades
+📊 Dashboard: Visualização de totais, quantidade de despesas e categoria mais onerosa.
 
+📝 Adição e edição de despesas com campos para descrição, valor, data e categoria.
 
-## ✅ Funcionalidades
+📆 Visualização HTML das despesas com data formatada e estilo escuro.
 
-* **📊 Dashboard**: Visualização de totais, quantidade de despesas e categoria mais onerosa.
-* **📝 Adição e edição de despesas** com campos para descrição, valor, data e categoria.
-* **📆 Visualização HTML das despesas** com data formatada e estilo escuro.
-* **📁 Categorias**: Totalmente gerenciáveis pelo usuário.
-* **⚙️ Configurações**: Habilitar/desabilitar notificações de resumo.
-* **🧾 Ajuda**: Guia para primeiros passos e uso da aplicação.
+📁 Categorias: Totalmente gerenciáveis pelo usuário.
 
-## 🧪 Tecnologias Utilizadas
+⚙️ Configurações: Habilitar/desabilitar notificações de resumo.
 
-* Java SE 8+
-* Java Swing
-* HTML para visualização de dados
-* Padrão de Projeto Singleton (para `Configuracoes`)
-* Collections (List, Map, Stream API)
+🧾 Ajuda: Guia para primeiros passos e uso da aplicação.
 
-## 📸 Capturas de Tela
+🧪 Tecnologias Utilizadas
+Java SE 8+
 
-> (Você pode adicionar aqui imagens da interface, como dashboard, editor de despesas, etc.)
+Java Swing
 
-## 🚀 Como Executar
+HTML para visualização de dados
 
-1. Clone o repositório:
+Padrão de Projeto Singleton (para Configuracoes)
 
-   ```bash
-   git clone https://github.com/seu-usuario/analista-financeiro.git
-   ```
-2. Importe o projeto em sua IDE (ex: IntelliJ IDEA ou Eclipse).
-3. Compile e execute a classe `TelaPrincipal.java`.
+Collections (List, Map, Stream API)
 
-## 💡 Sugestões Futuras
+📸 Capturas de Tela
+(Você pode adicionar aqui imagens da interface, como dashboard, editor de despesas, etc.)
 
-* Exportação de relatórios em PDF
-* Armazenamento em arquivo local ou banco de dados
-* Sincronização com nuvem (ex: Google Drive)
-* Dark/Light Theme toggle
+🚀 Como Executar
+Clone o repositório:
 
-## 👨‍💻 Autor
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/analista-financeiro.git
+Importe o projeto em sua IDE (ex: IntelliJ IDEA ou Eclipse).
 
-**Enzo Bradaschia**
+Compile e execute a classe TelaPrincipal.java.
+
+💡 Sugestões Futuras
+Exportação de relatórios em PDF
+
+Armazenamento em arquivo local ou banco de dados
+
+Sincronização com nuvem (ex: Google Drive)
+
+Dark/Light Theme toggle
+
+👨‍💻 Autor
+Enzo Bradaschia
 Desenvolvido como projeto de controle financeiro pessoal com foco em UX e boas práticas de interface.
-
----
-
