@@ -38,13 +38,6 @@ public class TelaAjuda extends JFrame {
 
         JPanel painelCentral = new JPanel(new BorderLayout());
         painelCentral.add(scroll, BorderLayout.CENTER);
-
-        try {
-            painelCentral.add(new JLabel(new ImageIcon(getClass().getResource("/imagens/help_banner.png"))), BorderLayout.SOUTH);
-        } catch (Exception e) {
-            // Caso a imagem não seja encontrada, simplesmente ignora
-        }
-
         this.add(painelCentral, BorderLayout.CENTER);
     }
 }

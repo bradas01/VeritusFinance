@@ -12,27 +12,27 @@ public class TelaOrcamento extends JFrame {
         this.setSize(500, 350);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
-        this.getContentPane().setBackground(new Color(30, 30, 30));  // Fundo escuro
+        this.getContentPane().setBackground(new Color(30, 30, 30));
 
         this.add(TelaPrincipal.createHeaderPanel("Orçamento"), BorderLayout.NORTH);
 
         JPanel painelPrincipal = new JPanel(new GridBagLayout());
-        painelPrincipal.setBackground(new Color(30, 30, 30));  // Fundo painel escuro
+        painelPrincipal.setBackground(new Color(30, 30, 30));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(10, 10, 10, 10);
 
         JPanel painelInput = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
-        painelInput.setBackground(new Color(30, 30, 30));  // Fundo painelInput escuro
+        painelInput.setBackground(new Color(30, 30, 30));
 
         JLabel label = new JLabel("Meta de Gastos Mensal (R$):");
-        label.setForeground(Color.WHITE); // Texto claro para tema escuro
+        label.setForeground(Color.WHITE);
         painelInput.add(label);
 
         JTextField txtOrcamento = new JTextField(10);
-        txtOrcamento.setBackground(new Color(60, 63, 65));  // Fundo campo texto escuro
-        txtOrcamento.setForeground(Color.WHITE);           // Texto claro no campo
+        txtOrcamento.setBackground(new Color(60, 63, 65));
+        txtOrcamento.setForeground(Color.WHITE);
         txtOrcamento.setCaretColor(Color.WHITE);
         painelInput.add(txtOrcamento);
 
