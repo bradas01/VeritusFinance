@@ -42,7 +42,6 @@ src/
 * **Java Swing** (JFrame, JPanel, GridBagLayout, etc.)
 * **JEditorPane + HTML/CSS inline** para visualização
 * **Stream API & Collections** (List, forEach, map, collect)
-* **Padrão Singleton** (para Configurações)
 
 ---
 
