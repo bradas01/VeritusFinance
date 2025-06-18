@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VeritusFinance:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VeritusFinance_jar</output-path>
+    <root id="archive" name="VeritusFinance.jar">
+      <element id="module-output" name="VeritusFinance" />
+    </root>
+  </artifact>
+</component>
